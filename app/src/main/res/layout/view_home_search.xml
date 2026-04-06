@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.textfield.TextInputLayout
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/tilSearch"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:boxBackgroundMode="filled"
-    app:boxBackgroundColor="@android:color/white"
-    app:boxCornerRadiusTopStart="@dimen/radius_md"
-    app:boxCornerRadiusTopEnd="@dimen/radius_md"
-    app:boxCornerRadiusBottomStart="@dimen/radius_md"
-    app:boxCornerRadiusBottomEnd="@dimen/radius_md"
-    app:startIconDrawable="@android:drawable/ic_menu_search">
+    style="@style/Card.Clean"
+    app:cardCornerRadius="@dimen/radius_lg"
+    app:cardElevation="2dp">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etSearch"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cari makanan, minuman, atau restoran"
-        android:inputType="text"
-        android:paddingTop="14dp"
-        android:paddingBottom="14dp"/>
-</com.google.android.material.textfield.TextInputLayout>
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:background="@color/surface_card">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@android:drawable/ic_menu_search"
+            app:tint="@color/text_muted" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:hint="Cari makan siang apa?"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_muted"
+            android:inputType="text" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            app:tint="@color/brand_primary" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
